@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Video Calling Platform</title>
+    <meta property="og:title" content="Live Everlasting Peafowl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="/css/style.css" />
+    <div>
+      <link href="/css/index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <navbar8-wrapper class="navbar8-wrapper">
+          <!--Navbar8 component-->
+          <header class="navbar8-container1">
+            <header data-thq="thq-navbar" class="navbar8-navbar-interactive">
+              <img
+                alt="logo"
+                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
+                class="navbar8-image1"
+              />
+              <div data-thq="thq-navbar-nav" class="navbar8-desktop-menu">
+                <nav class="navbar8-links1">
+                </nav>
+                <div class="navbar8-buttons1">
+                
+                  <a href="/update-password" >
+                    <span class="thq-body-small">
+                      <fragment class="home-fragment11">
+                        <span class="home-text11">Change Password</span>
+                      </fragment>
+                    </span>
+                </a>
+              </button>
+              <form action="/room" method="post" >
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" style="color: white; font-weight: bold; background-color: green; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">
+                    Create Video Call
+                </button>
+            </form>
+              
+               
+                  <form action="/logout" method="post" >
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" style="color: white; font-weight: bold; background-color: red; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">
+                        Logout
+                    </button>
+                </form>
+               
+                </div>
+              </div>
+
+              
+            </header>
+            <div class="navbar8-container8"></div>
+          </header>
+        </navbar8-wrapper>
+        <hero17-wrapper class="hero17-wrapper">
+       
+          <!--Hero17 component-->
+          <div class="hero17-header78">
+            <div
+              class="hero17-column thq-section-padding thq-section-max-width"
+            >
+              <div class="hero17-content1">
+                <h1>
+                  <fragment class="home-fragment26">
+                    <span class="home-text26 thq-heading-1">
+                      Welcome to Video Call Platform
+                    </span>
+                  </fragment>
+                </h1>
+                <p>
+                  <fragment class="home-fragment27">
+                    <span class="home-text27 thq-body-large">
+                      Easily start or join video calls with just a click.
+                      Connect with your team or friends hassle-free.
+                    </span>
+                  </fragment>
+                </p>
+              </div>
+              <div class="hero17-actions">
+                
+                
+                  
+             
+                <button class="thq-button-outline hero17-button2">
+                  <span>
+                    <fragment class="home-fragment24">
+                      <span class="home-text24 thq-body-small">
+                        Join Existing Call
+                      </span>
+                    </fragment>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="hero17-content2">
+              <div
+                class="hero17-row-container1 thq-animated-group-container-horizontal thq-mask-image-horizontal"
+              >
+                <div class="thq-animated-group-horizontal">
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1598870783724-2ecf2e0653b2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3OHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image10 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1646478297318-9607bca4e01b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image11 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1523484489927-4aa8bf9a99d8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3M3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image12 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1613993995046-07bce4b0bfed?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3N3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image13 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1680458841796-360a4cf4b3b1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image14 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1569000972333-c467870ca5ed?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image15 thq-img-scale thq-img-ratio-1-1"
+                  />
+                </div>
+                <div class="thq-animated-group-horizontal">
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1598870783724-2ecf2e0653b2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3OHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image16 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1646478297318-9607bca4e01b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image17 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1523484489927-4aa8bf9a99d8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3M3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image18 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1613993995046-07bce4b0bfed?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3N3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image19 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1680458841796-360a4cf4b3b1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image20 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1534312527009-56c7016453e6?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDIxfHxhYnN0cmFjdHxlbnwwfHx8fDE3MTA4NzA5MzB8MA&amp;ixlib=rb-4.0.3&amp;w=1500"
+                    class="hero17-placeholder-image21 thq-img-scale thq-img-ratio-1-1"
+                  />
+                </div>
+              </div>
+              <div
+                class="hero17-row-container2 thq-animated-group-container-horizontal thq-mask-image-horizontal"
+              >
+                <div class="thq-animated-group-horizontal-reverse">
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1523265005722-2be36e0fe801?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image22 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1598257006463-7c64a5a538cc?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image23 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://play.teleporthq.io/static/svg/default-img.svg"
+                    class="hero17-placeholder-image24 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://play.teleporthq.io/static/svg/default-img.svg"
+                    class="hero17-placeholder-image25 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://play.teleporthq.io/static/svg/default-img.svg"
+                    class="hero17-placeholder-image26 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/flagged/photo-1578074606880-a7f5c9a30418?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image27 thq-img-scale thq-img-ratio-1-1"
+                  />
+                </div>
+                <div class="thq-animated-group-horizontal-reverse">
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1523265005722-2be36e0fe801?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image28 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1598257006463-7c64a5a538cc?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcyNTQ0OTc3Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                    class="hero17-placeholder-image29 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://play.teleporthq.io/static/svg/default-img.svg"
+                    class="hero17-placeholder-image30 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://play.teleporthq.io/static/svg/default-img.svg"
+                    class="hero17-placeholder-image31 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://play.teleporthq.io/static/svg/default-img.svg"
+                    class="hero17-placeholder-image32 thq-img-scale thq-img-ratio-1-1"
+                  />
+                  <img
+                    alt="Hero Image"
+                    src="https://images.unsplash.com/photo-1568214379698-8aeb8c6c6ac8?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDEyfHxncmFmaWN8ZW58MHx8fHwxNzE1Nzk0OTk5fDA&amp;ixlib=rb-4.0.3&amp;w=1500"
+                    class="hero17-placeholder-image33 thq-img-scale thq-img-ratio-1-1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="hero17-container2">
+                <style>
+                  @keyframes scroll-x {
+                    from {
+                      transform: translateX(0);
+                    }
+                    to {
+                      transform: translateX(calc(-100% - 16px));
+                    }
+                  }
+
+                  @keyframes scroll-y {
+                    from {
+                      transform: translateY(0);
+                    }
+                    to {
+                      transform: translateY(calc(-100% - 16px));
+                    }
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </hero17-wrapper>
+        <steps2-wrapper class="steps2-wrapper">
+          <!--Steps2 component-->
+          <div class="steps2-container1 thq-section-padding">
+            <div class="steps2-max-width thq-section-max-width">
+              <div class="steps2-container2 thq-grid-2">
+                <div class="steps2-section-header">
+                  <h2 class="thq-heading-2">
+                    Discover the Power of Our Products
+                  </h2>
+                  <p class="thq-body-large">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse varius enim in eros elementum tristique. Duis
+                    cursus, mi quis viverra ornare, eros dolor interdum nulla,
+                    ut commodo diam libero vitae erat.
+                  </p>
+                  
+                </div>
+                <div class="steps2-container3">
+                  <div class="steps2-container4 thq-card">
+                    <h2>
+                      <fragment class="home-fragment32">
+                        <span class="home-text32 thq-heading-2">
+                          Start Video Call
+                        </span>
+                      </fragment>
+                    </h2>
+                    <span>
+                      <fragment class="home-fragment28">
+                        <span class="home-text28 thq-body-small">
+                          Click on the 'Start Video Call' button to begin a new
+                          video call session.
+                        </span>
+                      </fragment>
+                    </span>
+                    <label class="steps2-text15 thq-heading-3">01</label>
+                  </div>
+                  <div class="steps2-container5 thq-card">
+                    <h2>
+                      <fragment class="home-fragment30">
+                        <span class="home-text30 thq-heading-2">
+                          Join Existing Call
+                        </span>
+                      </fragment>
+                    </h2>
+                    <span>
+                      <fragment class="home-fragment31">
+                        <span class="home-text31 thq-body-small">
+                          Enter the provided code to join an existing video call
+                          session.
+                        </span>
+                      </fragment>
+                    </span>
+                    <label class="steps2-text18 thq-heading-3">02</label>
+                  </div>
+                  <div class="steps2-container6 thq-card">
+                    <h2>
+                      <fragment class="home-fragment33">
+                        <span class="home-text33 thq-heading-2">
+                          Change Password
+                        </span>
+                      </fragment>
+                    </h2>
+                    <span>
+                      <fragment class="home-fragment29">
+                        <span class="home-text29 thq-body-small">
+                          Navigate to the 'Change Password' option in the
+                          navigation bar to update your password.
+                        </span>
+                      </fragment>
+                    </span>
+                    <label class="steps2-text21 thq-heading-3">03</label>
+                  </div>
+                  <div class="steps2-container7 thq-card">
+                    <h2>
+                      <fragment class="home-fragment35">
+                        <span class="home-text35 thq-heading-2">Logout</span>
+                      </fragment>
+                    </h2>
+                    <span>
+                      <fragment class="home-fragment34">
+                        <span class="home-text34 thq-body-small">
+                          Click on 'Logout' in the navigation bar to securely
+                          log out of your account.
+                        </span>
+                      </fragment>
+                    </span>
+                    <label class="steps2-text24 thq-heading-3">04</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </steps2-wrapper>
+        <contact10-wrapper class="contact10-wrapper">
+          <!--Contact10 component-->
+          <div class="contact10-container1 thq-section-padding">
+            <div class="contact10-max-width thq-section-max-width">
+              <div class="contact10-content1 thq-flex-row">
+                <div class="contact10-content2">
+                  <h2>
+                    <fragment class="home-fragment38">
+                      <span class="home-text38 thq-heading-2">Contact Us</span>
+                    </fragment>
+                  </h2>
+                  <p>
+                    <fragment class="home-fragment36">
+                      <span class="home-text36 thq-body-large">
+                        Have questions or need support? Reach out to us!
+                      </span>
+                    </fragment>
+                  </p>
+                </div>
+              </div>
+              <div class="contact10-content3 thq-flex-row">
+                <div class="contact10-container2">
+                  <img
+                    alt="Email Icon"
+                    src="https://images.unsplash.com/photo-1588694926280-3ae414d06ccb?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDEzfHxjbHVqfGVufDB8fHx8MTcxNjI4NjI4N3ww&amp;ixlib=rb-4.0.3&amp;w=1400"
+                    class="contact10-image1 thq-img-ratio-16-9"
+                  />
+                  <h3>
+                    <fragment class="home-fragment40">
+                      <span class="home-text40 thq-heading-3">
+                        Email: support@example.com
+                      </span>
+                    </fragment>
+                  </h3>
+                  <p>
+                    <fragment class="home-fragment37">
+                      <span class="home-text37 thq-body-large">
+                        Send us an email and we'll get back to you as soon as
+                        possible.
+                      </span>
+                    </fragment>
+                  </p>
+                  <div class="contact10-container3">
+                    <a
+                      href="https://example.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="thq-button-flat thq-body-small"
+                    >
+                      Get directions
+                    </a>
+                  </div>
+                </div>
+                <div class="contact10-container4">
+                  <img
+                    alt="Phone Icon"
+                    src="https://images.unsplash.com/photo-1571979195097-59d223315d89?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDMxfHxidWNoYXJlc3R8ZW58MHx8fHwxNzE2Mjg2MzE3fDA&amp;ixlib=rb-4.0.3&amp;w=1400"
+                    class="contact10-image2 thq-img-ratio-16-9"
+                  />
+                  <h3>
+                    <fragment class="home-fragment41">
+                      <span class="home-text41 thq-heading-3">
+                        Phone: 123-456-7890
+                      </span>
+                    </fragment>
+                  </h3>
+                  <p>
+                    <fragment class="home-fragment39">
+                      <span class="home-text39 thq-body-large">
+                        Give us a call during our business hours for immediate
+                        assistance.
+                      </span>
+                    </fragment>
+                  </p>
+                  <div class="contact10-container5">
+                    <a
+                      href="https://example.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="thq-button-flat thq-body-small"
+                    >
+                      Get directions
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </contact10-wrapper>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
