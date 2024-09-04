@@ -27,7 +27,7 @@ router.get('/update-password',isAuth,homeController.getUpdatePassword),
 
 router.post('/room',isAuth, homeController.startRoomCall),
 
-router.post('/room/:roomId',isAuth, homeController.joinRoom),
+router.get('/room/:roomId',isAuth, homeController.joinRoom),
 
 
 

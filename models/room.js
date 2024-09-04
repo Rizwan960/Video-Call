@@ -15,6 +15,14 @@ adminEmail: {
     type:String,
     required:true,
 },
+isEnded:{
+    type:Boolean,
+    required:true,
+},
+inCall:{
+    type:Boolean,
+    required:true,
+},
 roomUsers:{
     users : [
         {

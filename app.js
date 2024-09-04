@@ -128,7 +128,12 @@ io.on('connection',(socket)=>{
       socket.io(roomId).broadcast.emit('user-connected',userId)
 
     },1000)
+    socket.on('disconnect',()=>{
+      console.log("User Disconnected");
+      io.emit("user-disconnected",userId)
+    })
   })
+ 
 })
 
 mongoose

@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const Room = require('../models/room')
 const bcrypt  = require('bcryptjs')
 const crypto = require('crypto');
 const { validationResult } = require('express-validator')
@@ -70,17 +71,84 @@ exports.postLogout = async (req,res,next)=>{
 
 exports.startRoomCall = async (req, res, next)=> {
     const uuid = crypto.randomUUID();
-    res.render('room/room', {
-        path: '/room',
-        pageTitle: 'Call Room',
-        roomId: uuid
-    })
+    try{
+        const room =await Room.findOne({adminEmail:req.session.user.email});
+        console.log(room)
+        if(room)
+        {
+            const error = new Error("You cannot create more then one call at same time");
+            error.httpStatusCode=500;
+            return next(error); 
+        }else{
+            const room = new Room({
+                roomId : uuid,
+                adminName : req.session.user.fullName,
+                adminEmail : req.session.user.email,
+                isEnded: false,
+                inCall : true,
+                roomUsers : {
+                    users : []
+                }
+            })
+
+           await room.save();
+           return res.render('room/room', {
+                path: '/room',
+                pageTitle: 'Call Room',
+                roomId: uuid
+            })
+        }
+    }
+    catch(err){
+        const error = new Error(err);
+        error.httpStatusCode=500;
+        return next(error); 
+    
+    }
 }
 
-exports.joinRoom = async (req, res, next)=> {
-    res.render('room/room', {
+exports.joinRoom = async (req, res, next) => {
+    const id = req.params.roomId;
+    try {
+      const room = await Room.findOne({ roomId: id });
+      if (!room) {
+        const error = new Error("Call does not exist.");
+        error.httpStatusCode = 404;
+        return next(error);
+      }
+      // Check if the user is the admin of the room trying to join
+      if (room.adminEmail === req.session.user.email) {
+        const error = new Error("You cannot join your own call.");
+        error.httpStatusCode = 400;
+        return next(error);
+      }
+      // Check if the room has ended
+      if (room.isEnded) {
+        const error = new Error("This call has already ended.");
+        error.httpStatusCode = 400;
+        return next(error);
+      }
+      // Update room with the new user
+      const existingUser = room.roomUsers.users.find(
+        (user) => user.userId.toString() === req.session.user._id.toString()
+      );
+      if (!existingUser) {
+        room.roomUsers.users.push({
+          userId: req.session.user._id,
+          userName: req.session.user.fullName,
+        });
+        await room.save();
+      }
+      // Render the room view with updated room data
+      res.render('room/room', {
         path: '/room',
         pageTitle: 'Call Room',
-        roomId: uuid
-    })
-}
+        roomId: id,
+      });
+    } catch (err) {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    }
+  };
+  
